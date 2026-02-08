@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>簡単診断アプリ</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+ 
+<style>
+ h1 { text-align:center; }
+
+  #overlay {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+  transition: opacity 0.3s ease;
+  }
+  
+  #popupContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+  }
+  #popupContent img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  button { margin-top: 10px; padding: 10px 20px; }
+</style>
+</head>
+<body>
+
+<h1>✨おすすめインターネット美学診断アプリ✨</h1>
+  <p>インターネット美学とは、その名の通り「ネット上で生まれた、画像・映像・音楽・ファッションのジャンル」のこと。</p><p>このアプリでは、簡単な質問に答えるだけで、あなたにぴったりなジャンルを診断できちゃいます！</p><p>どこか懐かしい雰囲気のジャンルが多いので、平成レトロやY2Kがお好きな方にオススメです♪</p><p>診断された壁紙やファッションを取り入れて、日常をさらに楽しく、魅力的にしてみましょう✨</p><br>
+
+<form id="quizForm">
+  <p>Q1: 休日の過ごし方は？</p>
+  <input type="radio" name="q1" value="A"> 友達と遊ぶ　
+  <input type="radio" name="q1" value="B"> 家でゴロゴロ　
+  <input type="radio" name="q1" value="C"> もっぱら仕事…
+
+  <p>Q2: 今はどこに行きたい気分？</p>
+  <input type="radio" name="q2" value="A"> ショッピングモール　
+  <input type="radio" name="q2" value="B"> 静かな図書館　
+  <input type="radio" name="q2" value="C"> 深夜の公園
+
+  <p>Q3: 子供の頃にほしかったのは？</p>
+  <input type="radio" name="q3" value="A"> 流行りのゲーム　
+  <input type="radio" name="q3" value="B"> 図鑑　
+  <input type="radio" name="q3" value="C"> お菓子の詰め合わせ
+
+  <p>Q4: タイムスリップするならどの時代に行く？</p>
+  <input type="radio" name="q4" value="A"> 数十年後の近未来　
+  <input type="radio" name="q4" value="B"> 70～90年代あたり　
+  <input type="radio" name="q4" value="C"> 人類が生まれる前の時代！
+</form>
+
+<button onclick="showResult()">診断する！</button>
+
+<div id="overlay">
+  <div id="popup">
+    <div id="popupContent"></div>
+    <button onclick="closePopup()">閉じる</button>
+  </div>
+</div>
+</body>
+</html>
