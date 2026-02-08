@@ -1,0 +1,2 @@
+# 253079InternetAestheticDiagnosis
+簡単な質問に答えて、あなたにぴったりなインターネット美学を見つけましょう！
